@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Reasons</h1>
+
+<p>This component demonstrates listing reasons I wish to work at BHHC, which I definitely do!</p>
+
+<p *ngIf="!reasons"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="reasons">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>Created On</th>
+      <th>Modified On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reason of reasons">
+      <td>{{ reason.id }}</td>
+      <td>{{ reason.description }}</td>
+      <td>{{ reason.createdOn }}</td>
+      <td>{{ reason.modifiedOn }}</td>
+    </tr>
+  </tbody>
+  <button class="btn btn-primary" (click)="addReason()">Add</button>
+  <strong>&nbsp;&nbsp;|&nbsp;&nbsp;</strong>
+  <button class="btn btn-primary" (click)="save()">Save</button>
+</table>
